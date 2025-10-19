@@ -7,6 +7,8 @@ from config import API_KEY
 from enviar_email import enviar_relatorio
 from bs4 import BeautifulSoup
 import re
+from historico import salvar_historico
+from config import EMAIL, SENHA
 
 # Lista de produtos para monitorar
 produtos = [
@@ -104,3 +106,12 @@ if __name__ == "__main__":
 
     # Envia relatório por e-mail
     enviar_relatorio()
+
+    from historico import salvar_historico
+
+# Depois de gerar relatórios
+salvar_historico(resultados)
+print("📌 Histórico atualizado com sucesso!")
+
+# Detecta quedas de preço
+alertas = detectar_queda(resultados, "dados_historicos/precos.csv", queda_minima=10)
