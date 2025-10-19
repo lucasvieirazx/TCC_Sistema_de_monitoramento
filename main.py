@@ -3,6 +3,7 @@ import requests
 import csv
 import os
 from datetime import datetime
+from avisos import queda
 from config import API_KEY
 from enviar_email import enviar_relatorio
 from bs4 import BeautifulSoup
@@ -113,5 +114,6 @@ if __name__ == "__main__":
 salvar_historico(resultados)
 print("📌 Histórico atualizado com sucesso!")
 
-# Detecta quedas de preço
-alertas = detectar_queda(resultados, "dados_historicos/precos.csv", queda_minima=10)
+# Queda
+alertas = queda(resultados, "dados_historicos/precos.csv", minima=10)
+print("Alertas retornados:", alertas)
