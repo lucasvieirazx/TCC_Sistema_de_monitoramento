@@ -1,79 +1,21 @@
 Data,Produto,Preço
-2025-10-08 13:40,Notebook Lenovo Ideapad 3,"r$ 2.799,00"
-2025-10-08 13:40,Notebook Acer Aspire 5,"r$ 2.899,00"
-2025-10-08 13:40,Placa de Vídeo RTX 3060,"r$2.950,00. o p"
-2025-10-08 13:46,Notebook Lenovo Ideapad 3,"r$ 2.934,52"
-2025-10-08 13:46,Notebook Acer Aspire 5,"r$ 2.899,00"
-2025-10-08 13:46,Placa de Vídeo RTX 3060,"r$2.950,00. o p"
-2025-10-08 13:49,Notebook Lenovo Ideapad 3,"r$ 2.799,00"
-2025-10-08 13:49,Notebook Acer Aspire 5,"r$ 2.899,00"
-2025-10-08 13:49,Placa de Vídeo RTX 3060,"r$2.950,00. o p"
-2025-10-08 13:56,Notebook Lenovo Ideapad 3,"r$ 2.934,52"
-2025-10-08 13:56,Notebook Acer Aspire 5,"r$ 2.899,00"
-2025-10-08 13:56,Placa de Vídeo RTX 3060,"r$2.950,00. o p"
-2025-10-08 14:03,Notebook Lenovo Ideapad 3,"r$5.776,67. o p"
-2025-10-08 14:03,Notebook Acer Aspire 5,"r$ 2.899,00"
-2025-10-08 14:03,Placa de Vídeo RTX 3060,"r$uedata=s:',"
-2025-10-08 14:57,Notebook Lenovo Ideapad 3,"R$39,99"
-2025-10-08 14:57,Notebook Acer Aspire 5,"R$39,99"
-2025-10-08 14:57,Placa de Vídeo RTX 3060,"R$105,75"
-2025-10-08 14:59,Notebook Lenovo Ideapad 3,Erro: could not convert string to float: 'R$3997.99'
-2025-10-08 14:59,Notebook Acer Aspire 5,Erro: could not convert string to float: 'R$3039.00'
-2025-10-08 14:59,Placa de Vídeo RTX 3060,Erro: could not convert string to float: 'R$1378.20'
-2025-10-08 15:01,Notebook Lenovo Ideapad 3,Erro: could not convert string to float: '3.000a4.000'
-2025-10-08 15:01,Notebook Acer Aspire 5,Erro: could not convert string to float: '12.200emais'
-2025-10-08 15:01,Placa de Vídeo RTX 3060,Erro: could not convert string to float: '1.700a2.200'
-2025-10-08 15:05,Notebook Lenovo Ideapad 3,"R$5.982,93"
-2025-10-08 15:05,Notebook Acer Aspire 5,"R$7.993,00"
-2025-10-08 15:05,Placa de Vídeo RTX 3060,"R$5.690,00R$5.690,00"
-2025-10-08 15:07,Notebook Lenovo Ideapad 3,R$2.500 A R$3.100
-2025-10-08 15:07,Notebook Acer Aspire 5,R$2.200 A R$3.000
-2025-10-08 15:07,Placa de Vídeo RTX 3060,R$1.700 A R$2.200
-2025-10-18 13:25,Notebook Lenovo Ideapad 3,R$2.700 A R$3.800
-2025-10-18 13:25,Notebook Acer Aspire 5,R$4.500 E MAIS
-2025-10-18 13:25,Placa de Vídeo RTX 3060,R$21.200 E MAIS
-2025-10-18 13:25:49,Notebook Lenovo Ideapad 3,R$2.700 A R$3.800
-2025-10-18 13:25:49,Notebook Acer Aspire 5,R$4.500 E MAIS
-2025-10-18 13:25:49,Placa de Vídeo RTX 3060,R$21.200 E MAIS
-2025-10-18 13:27,Notebook Lenovo Ideapad 3,R$2.700 A R$3.800
-2025-10-18 13:27,Notebook Acer Aspire 5,R$1.800 A R$3.000
-2025-10-18 13:27,Placa de Vídeo RTX 3060,R$1.200
-2025-10-18 13:27:36,Notebook Lenovo Ideapad 3,R$2.700 A R$3.800
-2025-10-18 13:27:36,Notebook Acer Aspire 5,R$1.800 A R$3.000
-2025-10-18 13:27:36,Placa de Vídeo RTX 3060,R$1.200
-2025-10-19 18:06,Notebook Lenovo Ideapad 3,R$2.500 A R$3.200
-2025-10-19 18:06,Notebook Acer Aspire 5,R$1.800 A R$3.000
-2025-10-19 18:06,Placa de Vídeo RTX 3060,R$21.200 E MAIS
-2025-10-19 18:07:01,Notebook Lenovo Ideapad 3,R$2.500 A R$3.200
-2025-10-19 18:07:01,Notebook Acer Aspire 5,R$1.800 A R$3.000
-2025-10-19 18:07:01,Placa de Vídeo RTX 3060,R$21.200 E MAIS
-2025-10-19 18:09,Notebook Lenovo Ideapad 3,R$1.500 A R$2.400
-2025-10-19 18:09,Notebook Acer Aspire 5,R$12.400 E MAIS
-2025-10-19 18:09,Placa de Vídeo RTX 3060,R$21.200 E MAIS
-2025-10-19 18:09:10,Notebook Lenovo Ideapad 3,R$1.500 A R$2.400
-2025-10-19 18:09:10,Notebook Acer Aspire 5,R$12.400 E MAIS
-2025-10-19 18:09:10,Placa de Vídeo RTX 3060,R$21.200 E MAIS
-2025-10-19 18:09,Notebook Lenovo Ideapad 3,R$1.500 A R$2.400
-2025-10-19 18:09,Notebook Acer Aspire 5,R$1.800 A R$3.000
-2025-10-19 18:09,Placa de Vídeo RTX 3060,R$5.300 E MAIS
-2025-10-19 18:09:40,Notebook Lenovo Ideapad 3,R$1.500 A R$2.400
-2025-10-19 18:09:40,Notebook Acer Aspire 5,R$1.800 A R$3.000
-2025-10-19 18:09:40,Placa de Vídeo RTX 3060,R$5.300 E MAIS
-2025-10-19 18:17,Notebook Lenovo Ideapad 3,R$2.300 A R$3.200
-2025-10-19 18:17,Notebook Acer Aspire 5,R$10.800 E MAIS
-2025-10-19 18:17,Placa de Vídeo RTX 3060,R$13.500 E MAIS
-2025-10-19 18:17:36,Notebook Lenovo Ideapad 3,R$2.300 A R$3.200
-2025-10-19 18:17:36,Notebook Acer Aspire 5,R$10.800 E MAIS
-2025-10-19 18:17:36,Placa de Vídeo RTX 3060,R$13.500 E MAIS
-2025-10-19 18:20,Notebook Lenovo Ideapad 3,R$1.500 A R$2.400
-2025-10-19 18:20,Notebook Acer Aspire 5,R$6.100 E MAIS
-2025-10-19 18:20,Placa de Vídeo RTX 3060,R$5.300 E MAIS
-2025-10-19 18:20:36,Notebook Lenovo Ideapad 3,R$1.500 A R$2.400
-2025-10-19 18:20:36,Notebook Acer Aspire 5,R$6.100 E MAIS
-2025-10-19 18:20:36,Placa de Vídeo RTX 3060,R$5.300 E MAIS
-2025-10-19 18:21,Notebook Lenovo Ideapad 3,R$1.500 A R$2.400
-2025-10-19 18:21,Notebook Acer Aspire 5,R$1.800 A R$3.000
-2025-10-19 18:21,Placa de Vídeo RTX 3060,R$6.200 E MAIS
-2025-10-19 18:21:29,Notebook Lenovo Ideapad 3,R$1.500 A R$2.400
-2025-10-19 18:21:29,Notebook Acer Aspire 5,R$1.800 A R$3.000
-2025-10-19 18:21:29,Placa de Vídeo RTX 3060,R$6.200 E MAIS
+2025-10-20 19:55:57,Notebook Lenovo Ideapad 3,"R$4.999,00"
+2025-10-20 19:55:57,Notebook Acer Aspire 5,"R$3.990,00"
+2025-10-20 19:55:57,Placa de Vídeo RTX 3060,"R$5.650,00"2025-10-20 20:09:55,Notebook Lenovo Ideapad 3,Erro HTTP 401
+2025-10-20 20:09:55,Notebook Acer Aspire 5,Erro HTTP 401
+2025-10-20 20:09:55,Placa de Vídeo RTX 3060,Erro HTTP 401
+2025-10-20 20:11:05,Notebook Lenovo Ideapad 3,"R$2.399,00"
+2025-10-20 20:11:05,Notebook Acer Aspire 5,"R$5.999,00"
+2025-10-20 20:11:05,Placa de Vídeo RTX 3060,"R$5.489,00"
+2025-10-20 20:13:31,Notebook Lenovo Ideapad 3,Erro HTTP 401
+2025-10-20 20:13:31,Notebook Acer Aspire 5,Erro HTTP 401
+2025-10-20 20:13:31,Placa de Vídeo RTX 3060,Erro HTTP 401
+2025-10-20 20:16:28,Notebook Lenovo Ideapad 3,"R$2.899,00"
+2025-10-20 20:16:28,Notebook Acer Aspire 5,"R$5.299,00"
+2025-10-20 20:16:28,Placa de Vídeo RTX 3060,"R$2.599,00"
+2025-10-20 20:18:22,Notebook Lenovo Ideapad 3,"R$2.878,00"
+2025-10-20 20:18:22,Notebook Acer Aspire 5,"R$7.919,00"
+2025-10-20 20:18:22,Placa de Vídeo RTX 3060,"R$2.269,00"
+2025-10-20 20:28:01,Notebook Lenovo Ideapad 3,"R$2.296,00"
+2025-10-20 20:28:01,Notebook Acer Aspire 5,"R$3.057,00"
+2025-10-20 20:28:01,Placa de Vídeo RTX 3060,"R$2.269,00"

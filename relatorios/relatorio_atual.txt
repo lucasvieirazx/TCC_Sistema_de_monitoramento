@@ -1,5 +1,19 @@
-Relatório de preços - 2025-10-19 18:21
+📌 Relatório de preços - 2025-10-20 20:28:01
 ==================================================
-Notebook Lenovo Ideapad 3: R$1.500 A R$2.400
-Notebook Acer Aspire 5: R$1.800 A R$3.000
-Placa de Vídeo RTX 3060: R$6.200 E MAIS
+
+💻 Notebook Lenovo Ideapad 3
+URL: https://www.amazon.com.br/s?k=notebook+lenovo+ideapad+3
+Preço: R$2.296,00
+
+💻 Notebook Acer Aspire 5
+URL: https://www.amazon.com.br/s?k=notebook+acer+aspire+5
+Preço: R$3.057,00
+
+💻 Placa de Vídeo RTX 3060
+URL: https://www.amazon.com.br/s?k=rtx+3060
+Preço: R$2.269,00
+
+==================================================
+🔹 Preço mínimo: R$0.00
+🔹 Preço máximo: R$0.00
+🔹 Preço médio: R$0.00

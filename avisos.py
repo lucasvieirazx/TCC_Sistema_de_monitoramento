@@ -1,12 +1,26 @@
 # avisos.py
 import csv
+import re
+
+def extrair_valor(texto):
+    """
+    Extrai o menor número de um intervalo ou de texto.
+    Ex:
+      "R$1.700 A R$3.200" -> 1700.0
+      "R$21.200 E MAIS" -> 21200.0
+      "R$3.500" -> 3500.0
+    """
+    texto = texto.replace("R$", "").replace(" ", "").replace(",", ".")
+    numeros = re.findall(r"\d+(?:\.\d+)?", texto)
+    if numeros:
+        valores = [float(n) for n in numeros]
+        return min(valores)
+    return 0.0
 
 def queda(resultados_atual: dict, arquivo_csv: str, minima: float = 10.0):
-    
     """
     Compara os preços atuais com o último preço salvo no CSV.
     Retorna dicionário com produtos que tiveram queda >= minima (%)
-    e imprime os resultados no console.
     """
     ultimo = {}
 
@@ -14,11 +28,14 @@ def queda(resultados_atual: dict, arquivo_csv: str, minima: float = 10.0):
     try:
         with open(arquivo_csv, "r", encoding="utf-8") as f:
             reader = csv.DictReader(f)
+            # Ignora maiúsculas/minúsculas nos nomes das colunas
+            field_map = {name.lower(): name for name in reader.fieldnames}
+
             for linha in reader:
-                produto = linha["produto"]
-                preco = linha["preco"]
+                produto = linha[field_map.get("produto", "Produto")]
+                preco = linha[field_map.get("preço", "Preço")]
                 try:
-                    preco_float = float(str(preco).replace(",", "."))
+                    preco_float = extrair_valor(preco)
                     ultimo[produto] = preco_float
                 except ValueError:
                     continue
@@ -28,11 +45,7 @@ def queda(resultados_atual: dict, arquivo_csv: str, minima: float = 10.0):
 
     avisos = {}
     for produto, preco_atual_str in resultados_atual.items():
-        try:
-            preco_atual = float(str(preco_atual_str).replace("R$", "").replace(",", ".").replace(" ", ""))
-        except ValueError:
-            continue
-
+        preco_atual = extrair_valor(preco_atual_str)
         if produto in ultimo:
             preco_antigo = ultimo[produto]
             if preco_atual < preco_antigo:
