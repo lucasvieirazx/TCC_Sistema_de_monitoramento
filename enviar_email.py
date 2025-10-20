@@ -1,53 +1,75 @@
 # enviar_email.py
 import smtplib
-from email.message import EmailMessage
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+import csv
+from datetime import datetime
 from config import EMAIL, SENHA
-import openpyxl
-import os
-
-def carregar_destinatarios():
-    """Lê os e-mails do arquivo emails.xlsx"""
-    arquivo = "emails.xlsx"
-    if not os.path.exists(arquivo):
-        print("⚠️ Arquivo emails.xlsx não encontrado. Nenhum e-mail será enviado.")
-        return []
-
-    planilha = openpyxl.load_workbook(arquivo)
-    aba = planilha.active
-    emails = []
-
-    for linha in aba.iter_rows(min_row=2, values_only=True):
-        if linha[0]:
-            emails.append(linha[0])
-    return emails
 
 def enviar_relatorio():
-    """Envia o relatório TXT por e-mail para os destinatários"""
-    destinatarios = carregar_destinatarios()
-    if not destinatarios:
-        print("⚠️ Nenhum destinatário encontrado.")
-        return
+    """Envia e-mail com relatório detalhado e comparativo de preços."""
+    
+    # Lê o histórico do último preço
+    ultimo = {}
+    try:
+        with open("dados_historicos/ultimo_preco.csv", "r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for linha in reader:
+                nome = linha["Produto"]
+                preco = linha["Preço"]
+                # Converte para float para poder calcular percentual
+                preco_float = float(preco.replace("R$", "").replace(" ", "").replace(",", "."))
+                ultimo[nome] = preco_float
+    except FileNotFoundError:
+        print("⚠️ Arquivo ultimo_preco.csv não encontrado. Não será possível comparar com preços anteriores.")
 
-    caminho_relatorio = "relatorios/relatorio_atual.txt"
-    if not os.path.exists(caminho_relatorio):
-        print("⚠️ Relatório não encontrado. Gere o relatório antes de enviar.")
-        return
+    # Lê o relatório atual
+    atuais = {}
+    with open("dados_historicos/precos.csv", "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        linhas = list(reader)
+        if linhas:
+            ultima_linha = linhas[-len(ultimo):]  # pega os últimos registros
+            for linha in ultima_linha:
+                nome = linha["Produto"]
+                preco = linha["Preço"]
+                preco_float = float(preco.replace("R$", "").replace(" ", "").replace(",", "."))
+                atuais[nome] = preco_float
 
-    # Lê o conteúdo do relatório
-    with open(caminho_relatorio, "r", encoding="utf-8") as f:
-        conteudo = f.read()
+    # Monta o corpo do e-mail
+    data = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    corpo = f"📌 Relatório de preços - {data}\n\n"
 
-    # Cria o e-mail
-    msg = EmailMessage()
-    msg["Subject"] = "Relatório de Preços - Notebooks e Hardware"
+    for produto in atuais:
+        preco_atual = atuais[produto]
+        preco_antigo = ultimo.get(produto, preco_atual)
+        queda = ((preco_antigo - preco_atual) / preco_antigo * 100) if produto in ultimo else 0
+        if queda > 0:
+            emoji = "📉"
+        else:
+            emoji = "✅"
+        corpo += (
+            f"💻 {produto}\n"
+            f"Preço anterior: R${preco_antigo:.2f}\n"
+            f"Preço atual: R${preco_atual:.2f}\n"
+            f"Queda: {queda:.2f}% {emoji}\n\n"
+        )
+
+    corpo += "🎯 Todos os preços atualizados!\n"
+
+    # Monta o e-mail
+    msg = MIMEMultipart()
     msg["From"] = EMAIL
-    msg["To"] = ", ".join(destinatarios)
-    msg.set_content(conteudo)
+    msg["To"] = EMAIL  # Pode trocar para lista de destinatários
+    msg["Subject"] = "📬 Relatório de Preços Atualizado"
+    msg.attach(MIMEText(corpo, "plain", "utf-8"))
 
     try:
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
-            smtp.login(EMAIL, SENHA)
-            smtp.send_message(msg)
-            print(f"✅ E-mail enviado com sucesso para: {', '.join(destinatarios)}")
+        servidor = smtplib.SMTP("smtp.gmail.com", 587)
+        servidor.starttls()
+        servidor.login(EMAIL, SENHA)
+        servidor.sendmail(EMAIL, EMAIL, msg.as_string())
+        servidor.quit()
+        print("📩 E-mail de relatório enviado com sucesso!")
     except Exception as e:
         print(f"❌ Erro ao enviar e-mail: {e}")
